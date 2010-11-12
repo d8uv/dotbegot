@@ -1,12 +1,14 @@
+"use strict";
+
 onload = function () {
-// Creates canvas 320 
-    var paper = Raphael(10, 50, 320, 200);
+    var paper = new Raphael(0, 0, document.width, document.height),
+        circle = paper.circle(20, 20, 5);
+    
+    circle.attr({fill: "blue", stroke: "blue"});
 
-// Creates circle at x = 50, y = 40, with radius 10
-    var circle = paper.circle(50, 40, 10);
-// Sets the fill attribute of the circle to red (#f00)
-    circle.attr("fill", "#f00");
-
-// Sets the stroke attribute of the circle to white
-    circle.attr("stroke", "#fff");
-}
+    circle.hover(function (event) {
+	this.attr({fill: "red"});
+    }, function (event) {
+	this.attr({fill: "blue"});
+    });
+};
