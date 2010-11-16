@@ -12,10 +12,13 @@ onload = function () {
     };
 
     var paper = new Raphael(document.body, document.width, document.height), 
-    x = 0, y = 0;
+                x, y;
 
-    while (x < document.width) {
-	x += 10;
-	paper.growCircle(x, y);
+    for (x = 0; x < document.width; x += 10)
+    {
+	for (y = 0; y < document.height; y += 10)
+	{
+	    paper.growCircle(x, y);
+	}
     }
 };
