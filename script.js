@@ -11,7 +11,11 @@ onload = function () {
 	    });
     };
 
-    var paper = new Raphael(document.body, document.width, document.height);
+    var paper = new Raphael(document.body, document.width, document.height), 
+    x = 0, y = 0;
 
-    paper.growCircle(100, 50);
+    while (x < document.width) {
+	x += 10;
+	paper.growCircle(x, y);
+    }
 };
